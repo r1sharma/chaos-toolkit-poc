@@ -59,11 +59,11 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: ls -l $(Build.ArtifactStagingDirectory) && echo $(Build.ArtifactStagingDirectory)
+          - script: ls -l $(Pipeline.Workspace) && echo $(Pipeline.Workspace)
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: '
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Build.ArtifactStagingDirectory)/*.jar'
+              package: '$(Pipeline.Workspace)/*.jar'
