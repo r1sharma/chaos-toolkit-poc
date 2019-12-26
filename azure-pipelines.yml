@@ -66,4 +66,4 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              package: '$(Pipeline.Workspace)/drop/target/*.jar'
+              package: '/home/vsts/work/1/drop/target/sample-1.0-SNAPSHOT.jar'
